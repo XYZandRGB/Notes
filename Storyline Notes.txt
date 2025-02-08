@@ -1,0 +1,10 @@
+
+
+Right Click ->
+Accessibility: give it an alternate name e.g. "drink"
+
+Create Execute JavaScript Trigger when slide starts
+
+var leaf = document.querySelector("[data-acc-text='leaf']");
+
+let timeline = gsap.timeline({ paused: true });
