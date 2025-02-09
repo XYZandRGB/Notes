@@ -1,10 +1,30 @@
+/**Animating in one line at a time**/
+// Make sure that the object is only a textbox, add an animation, and under effect options you can see "paragraph by paragraph"
 
+/**ANIMATING ON HOVER**/
 
-Right Click ->
-Accessibility: give it an alternate name e.g. "drink"
+//Setup for objects within Storyline
+//Right Click -> Accessibility: give it an alternate name e.g. "drink"
+//Create Execute JavaScript Trigger when slide starts
 
-Create Execute JavaScript Trigger when slide starts
-
+var drink = document.querySelector("[data-acc-text='drink']");
 var leaf = document.querySelector("[data-acc-text='leaf']");
 
-let timeline = gsap.timeline({ paused: true });
+let timeline = gsap.timeline();
+
+function addAnimation_Move(target){
+    timeline.to(target, {y:"-=100", duration:0.5, ease:"power1.out"});
+}
+
+drink.addEventListener('mouseover', () => {
+    addAnimation_Move(leaf);
+    // Play the timeline forward
+    timeline.play();
+});
+
+
+drink.addEventListener('mouseout', () => {
+    addAnimation_Move(leaf);
+    // Reverse the timeline
+    timeline.reverse();
+});
