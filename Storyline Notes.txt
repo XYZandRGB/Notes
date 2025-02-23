@@ -28,3 +28,8 @@ drink.addEventListener('mouseout', () => {
     // Reverse the timeline
     timeline.reverse();
 });
+
+/**Publishing on Git**/
+
+Create a new repository pointed at the storyline Web output file. Rename story.html to index.html
+To make the html available on pages, it must be "deployed" google github pages or go to settings -> deployment and change them to the available options. 
